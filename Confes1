@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confess Lucu Banget! 😂❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html,
+        body {
+            height: 100%;
+            font-family: 'Fredoka One', cursive;
+            font-display: auto;
+            align-items: center;
+            text-align: center;
+            overflow: auto;
+            color: #333;
+            background-image: url('GAMBRA/cute-adorable-cloud-star-night-sky-cartoon-doodle-seamless-pattern-wallpaper-cover-banner-v_1408411jpg!sw800.jpg');
+        }
+        
+        #confessText {
+            font-size: 2.5em;
+            width: 80%;
+            max-width: 800px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            white-space: pre-wrap;
+            line-height: 1.5;
+            animation: slideIn 1s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        #answerButton {
+            display: none;
+            background-color: #ff1493;
+            color: #fff;
+            border: none;
+            padding: 20px 40px;
+            font-size: 1.5em;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s, transform 0.2s;
+            margin-top: 30px;
+        }
+        
+        #answerButton:hover {
+            background-color: #ff69b4;
+            transform: scale(1.1);
+        }
+        
+        #emojiHeart {
+            font-size: 3em;
+            animation: bounce 0.7s infinite alternate;
+            margin-top: 20px;
+        }
+        
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Autoplay Lagu -->
+    <audio id="bgMusic" autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-lovely.mp3" type="audio/mp3">
+    Browser kamu tidak mendukung audio.
+  </audio>
+
+    <div>
+        <div id="confessText"></div>
+        <button id="answerButton" onclick="jawabConfess()">Jawab Aku, Yuk! 😏💖</button>
+        <div id="emojiHeart">💖</div>
+    </div>
+
+    <script>
+        const text = `Hey kamu! 😜\n\nAku cuma mau bilang... aku tuh suka banget sama kamu, tapi gengsi banget buat ngomong langsung!\n\nJadi, aku putusin untuk confess lewat website lucu ini aja. Kalau kamu nggak suka, aku akan jadi stalker yang profesional. 🤓💘\n\nMau nggak jadi pacarku? Kalau enggak, aku tetap bakal jadi penggemar kamu, tapi gemes-gemes deh! 😂💖`;
+
+        let i = 0;
+        const speed = 50;
+
+        function typeWriter() {
+            if (i < text.length) {
+                document.getElementById("confessText").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            } else {
+                document.getElementById("answerButton").style.display = "inline-block";
+            }
+        }
+
+        function jawabConfess() {
+            alert("Ya ampun, kamu bilang 'Iya' atau 'Engga'? 😘💘 Aku bakal ngambek kalau enggak dijawab, lho!");
+        }
+
+        window.onload = () => {
+            document.getElementById("bgMusic").play();
+            typeWriter();
+        };
+    </script>
+
+</body>
+
+</html>
